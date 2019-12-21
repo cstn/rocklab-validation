@@ -2,9 +2,31 @@
   "name": "rocklab-validation",
   "version": "0.0.1",
   "description": "Validators",
+  "engines": {
+    "node": ">= 10",
+    "npm": ">= 6"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config config/jest.config.js",
+    "watch": "jest --config config/jest.config.js --watch",
+    "lint:js": "eslint packages/",
+    "lint:styles": "stylelint packages/**/*.css",
+    "lint": "npm run lint:js && npm run lint:styles",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:styles -- --fix",
+    "prettier": "prettier-eslint --write \"packages/**/*.{js,md}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,5 +44,14 @@
   "bugs": {
     "url": "https://github.com/cstn/rocklab-validation/issues"
   },
-  "homepage": "https://github.com/cstn/rocklab-validation#readme"
+  "homepage": "https://github.com/cstn/rocklab-validation#readme",
+  "devDependencies": {
+    "@rocklab/eslint-config-rocklab": "^1.2.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier-eslint-cli": "^5.0.0"
+  }
 }
