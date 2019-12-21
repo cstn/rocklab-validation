@@ -1,3 +1,12 @@
+/**
+ * @fileOverview check for empty values
+ */
+
+/**
+ * is value undefined, null or empty?
+ * @param value       the value to check
+ * @returns {boolean}
+ */
 const isEmpty = value => {
   if (typeof value === 'undefined') {
     return true;
