@@ -1,0 +1,26 @@
+{
+  "name": "rocklab-validation",
+  "version": "0.0.1",
+  "description": "Validators",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cstn/rocklab-validation.git"
+  },
+  "keywords": [
+    "rocklab",
+    "javscript",
+    "validator",
+    "validation",
+    "valid"
+  ],
+  "author": "Carsten Stein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cstn/rocklab-validation/issues"
+  },
+  "homepage": "https://github.com/cstn/rocklab-validation#readme"
+}
