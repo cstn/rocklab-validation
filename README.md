@@ -2,6 +2,10 @@
 
 _A library for input validation_
 
+* isBIC (Bank Identifier Code)
+* isEmail
+* isNotEmpty
+
 ## Install
 
 ```shell script
@@ -33,6 +37,7 @@ Check own code conventions
 
 ```shell script
 npm run lint
+npm run lint:fix
 ````
 
 Autoformat code
@@ -40,3 +45,10 @@ Autoformat code
 ```shell script
 npm run prettier
 ```
+
+Run tests
+
+```shell script
+npm test
+npm run watch
+````
