@@ -1,14 +1,14 @@
 /**
- * @fileOverview check Bank Identifier Code
+ * @fileOverview validator for BIC (Bank Identifier Code)
  */
 
-const isEmpty = require('./isEmpty');
+const isEmpty = require('./utils/isEmpty');
 
 // IIIICCLLXXX, I = Institution, C = Country, L = Location, X = Branch, XXX is optional
 const REGEX_SWIFT = /^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$/;
 
 /**
- * is it a BIC (Bnak Identifier Code)?
+ * check for a BIC (Bank Identifier Code)?
  * @param value         the value to check
  * @param countryCode   check the county
  * @returns {boolean}
@@ -18,15 +18,11 @@ const isBIC = (value, countryCode) => {
     return false;
   }
 
-  if (!REGEX_SWIFT.test(value)) {
-    return false;
-  }
-
   if (countryCode && countryCode !== value.substring(4, 6)) {
     return false;
   }
 
-  return true;
+  return REGEX_SWIFT.test(value);
 };
 
 module.exports = isBIC;
