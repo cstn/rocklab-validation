@@ -2,7 +2,7 @@
  * @fileOverview unit tests
  */
 
-const isBIC = require('./isBIC');
+const isBIC = require('./bic');
 
 describe('isBIC', () => {
   it.each([undefined, null, '', 'DEUTDEBBXXXX'])('should not validate %s', value => {

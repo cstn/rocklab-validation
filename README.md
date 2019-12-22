@@ -8,6 +8,16 @@ _A library for input validation_
 npm install @rocklab/validators
 ```
 
+## Usage
+
+````javascript
+import { isEmail } from '@rocklab/validation';
+
+if (!isEmail(value)) {
+  alert('Please enter a valid email address');
+}
+````
+
 ## Development
 
 ### Setup

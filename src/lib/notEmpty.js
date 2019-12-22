@@ -2,14 +2,14 @@
  * @fileOverview validator for required values
  */
 
-const isEmpty = require('./utils/isEmpty');
+const isEmpty = require('./utils/empty');
 
 /**
  * check required value
  * @param value       the value to check
  * @returns {boolean}
  */
-const isRequired = value => {
+const isNotEmpty = value => {
   if (isEmpty(value)) {
     return false;
   }
@@ -25,4 +25,4 @@ const isRequired = value => {
   return true;
 };
 
-module.exports = isRequired;
+module.exports = isNotEmpty;

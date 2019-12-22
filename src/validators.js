@@ -1,11 +1,13 @@
 /**
  * @fileOverview validators
- * @type {isEmpty}
  */
-const isBIC = require('./lib/isBIC');
-const isEmpty = require('./lib/isRequired');
+
+const isEmail = require('./lib/email');
+const isBIC = require('./lib/bic');
+const isNotEmpty = require('./lib/notEmpty');
 
 module.exports = {
+  isEmail,
   isBIC,
-  isEmpty,
+  isNotEmpty,
 };

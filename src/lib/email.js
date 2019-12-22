@@ -2,7 +2,7 @@
  * @fileOverview validator for email addresses
  */
 
-const isEmpty = require('./utils/isEmpty');
+const isEmpty = require('./utils/empty');
 
 const REGEX_EMAIL = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 
