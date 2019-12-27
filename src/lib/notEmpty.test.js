@@ -1,5 +1,5 @@
 /**
- * @fileOverview unit tests
+ * @fileOverview unit tests for required values validator
  */
 
 import isRequired from './notEmpty';

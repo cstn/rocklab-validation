@@ -1,5 +1,5 @@
 /**
- * @fileOverview unit tests
+ * @fileOverview unit tests for email validator
  */
 
 import isEmail from './email';

@@ -1,5 +1,5 @@
 /**
- * @fileOverview unit tests
+ * @fileOverview unit tests for length validator
  */
 
 import { hasMinLength, hasMaxLength, hasLength } from './length';

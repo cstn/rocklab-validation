@@ -2,6 +2,7 @@
 
 _A library for input validation_
 
+* Credit cards (number, cvc, expiration date)
 * BIC (Bank Identifier Code)
 * email
 * not empty
@@ -58,3 +59,5 @@ Run tests
 npm test
 npm run watch
 ````
+
+WITHOUT WARRANTY OF ANY KIND
