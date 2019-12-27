@@ -33,14 +33,20 @@ npm install
 
 ### Commands
 
-Check own code conventions
+Build
+
+```shell script
+npm run build
+```
+
+Check code conventions
 
 ```shell script
 npm run lint
 npm run lint:fix
 ````
 
-Autoformat code
+Auto format code
 
 ```shell script
 npm run prettier
