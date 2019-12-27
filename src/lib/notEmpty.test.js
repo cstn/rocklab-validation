@@ -2,7 +2,7 @@
  * @fileOverview unit tests
  */
 
-const isRequired = require('./notEmpty');
+import isRequired from './notEmpty';
 
 describe('isRequired', () => {
   it.each([undefined, null, '', [], {}])('should not validate %s', value => {

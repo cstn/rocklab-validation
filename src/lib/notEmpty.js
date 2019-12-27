@@ -2,7 +2,7 @@
  * @fileOverview validator for required values
  */
 
-const isEmpty = require('./utils/empty');
+import isEmpty from './utils/empty';
 
 /**
  * check required value
@@ -25,4 +25,4 @@ const isNotEmpty = value => {
   return true;
 };
 
-module.exports = isNotEmpty;
+export default isNotEmpty;
