@@ -1,5 +1,5 @@
 /**
- * @fileOverview unit tests
+ * @fileOverview unit tests for BIC validator
  */
 
 import isBIC from './bic';

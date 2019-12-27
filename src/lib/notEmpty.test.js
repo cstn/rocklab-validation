@@ -1,10 +1,10 @@
 /**
- * @fileOverview unit tests
+ * @fileOverview unit tests for required values validator
  */
 
 import isRequired from './notEmpty';
 
-describe('isRequired', () => {
+describe('notEmpty', () => {
   it.each([undefined, null, '', [], {}])('should not validate %s', value => {
     expect(isRequired(value)).toBeFalsy();
   });

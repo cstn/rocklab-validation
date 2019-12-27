@@ -6,10 +6,10 @@
     "node": ">= 10",
     "npm": ">= 6"
   },
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf lib/",
-    "build": "babel src --out-dir lib",
+    "clean": "rimraf dist/",
+    "build": "babel src --out-dir dist",
     "prepublish": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
