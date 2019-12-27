@@ -2,6 +2,7 @@
  * @fileOverview validators
  */
 
+import isBIC from './lib/bic';
 import isCreditCard, {
   TYPE as CREDIT_CARD_TYPE,
   isCreditCardNumber,
@@ -9,18 +10,19 @@ import isCreditCard, {
   isCreditCardExpirationDate,
 } from './lib/creditCard';
 import isEmail from './lib/email';
-import isBIC from './lib/bic';
+import isIBAN from './lib/iban';
 import isNotEmpty from './lib/notEmpty';
 import { hasLength, hasMaxLength, hasMinLength } from './lib/length';
 
 export default {
   CREDIT_CARD_TYPE,
+  isBIC,
   isCreditCard,
   isCreditCardExpirationDate,
   isCreditCardNumber,
   isCVC,
   isEmail,
-  isBIC,
+  isIBAN,
   isNotEmpty,
   hasMaxLength,
   hasMinLength,

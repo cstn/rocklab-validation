@@ -5,7 +5,9 @@ _A library for input validation_
 * Credit cards (number, cvc, expiration date)
 * BIC (Bank Identifier Code)
 * email
+* IBAN
 * not empty
+* length
 
 ## Install
 
