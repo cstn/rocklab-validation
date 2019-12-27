@@ -2,7 +2,7 @@
  * @fileOverview validator for email addresses
  */
 
-const isEmpty = require('./utils/empty');
+import isEmpty from './utils/empty';
 
 const REGEX_EMAIL = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
 
@@ -14,4 +14,4 @@ const isEmail = value => {
   return REGEX_EMAIL.test(value);
 };
 
-module.exports = isEmail;
+export default isEmail;

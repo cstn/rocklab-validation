@@ -2,7 +2,7 @@
  * @fileOverview validator for BIC (Bank Identifier Code)
  */
 
-const isEmpty = require('./utils/empty');
+import isEmpty from './utils/empty';
 
 // IIIICCLLXXX, I = Institution, C = Country, L = Location, X = Branch, XXX is optional
 const REGEX_SWIFT = /^([a-zA-Z]){4}([a-zA-Z]){2}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$/;
@@ -25,4 +25,4 @@ const isBIC = (value, countryCode) => {
   return REGEX_SWIFT.test(value);
 };
 
-module.exports = isBIC;
+export default isBIC;

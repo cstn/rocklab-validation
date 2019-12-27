@@ -2,7 +2,7 @@
  * @fileOverview unit tests
  */
 
-const isEmail = require('./email');
+import isEmail from './email';
 
 describe('isEmail', () => {
   it.each([undefined, null, '', 'a.test.com', 'a@b.c'])('should not validate %s', value => {

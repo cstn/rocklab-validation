@@ -1,1 +1,1 @@
-module.exports = require('./src/validators');
+module.exports = require('./src/index');

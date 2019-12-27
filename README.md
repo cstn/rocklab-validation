@@ -2,9 +2,9 @@
 
 _A library for input validation_
 
-* isBIC (Bank Identifier Code)
-* isEmail
-* isNotEmpty
+* BIC (Bank Identifier Code)
+* email
+* not empty
 
 ## Install
 
