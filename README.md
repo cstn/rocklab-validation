@@ -2,12 +2,19 @@
 
 _A library for input validation_
 
-* Credit cards (number, cvc, expiration date)
+* Credit card (number, cvc, expiration date)
 * BIC (Bank Identifier Code)
-* email
-* IBAN
-* not empty
+* E-mail address
+* IBAN (International Bank Account Number)
+* non empty
 * length
+* password
+* username
+
+## Requirements
+
+* node version 10
+* npm version 6
 
 ## Install
 
@@ -17,13 +24,13 @@ npm install @rocklab/validators
 
 ## Usage
 
-````javascript
+```javascript
 import { isEmail } from '@rocklab/validation';
 
 if (!isEmail(value)) {
   alert('Please enter a valid email address');
 }
-````
+```
 
 ## Development
 
@@ -32,7 +39,7 @@ if (!isEmail(value)) {
 ```shell script
 git clone https://github.com/cstn/rocklab-validation.git
 npm install
-````
+```
 
 ### Commands
 
@@ -47,7 +54,7 @@ Check code conventions
 ```shell script
 npm run lint
 npm run lint:fix
-````
+```
 
 Auto format code
 
@@ -60,6 +67,6 @@ Run tests
 ```shell script
 npm test
 npm run watch
-````
+```
 
 WITHOUT WARRANTY OF ANY KIND
