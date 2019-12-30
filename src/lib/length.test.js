@@ -2,7 +2,7 @@
  * @fileOverview unit tests for length validator
  */
 
-import { hasMinLength, hasMaxLength, hasLength } from './length';
+import hasLength, { hasMinLength, hasMaxLength, hasExactLength } from './length';
 
 describe('length', () => {
   describe('hasMinLength', () => {
@@ -51,14 +51,14 @@ describe('length', () => {
     });
   });
 
-  describe('hasLength', () => {
+  describe('hasExactLength', () => {
     it.each([
       ['', 0],
       ['a', 1],
       ['aa', 2],
       [[1, 2], 2],
     ])('should validate %p has length %d', (value, length) => {
-      expect(hasLength(value, length)).toBeTruthy();
+      expect(hasExactLength(value, length)).toBeTruthy();
     });
 
     it.each([
@@ -67,7 +67,29 @@ describe('length', () => {
       ['a', 2],
       [[1, 2], 1],
     ])('should not validate %p has length %d', (value, length) => {
-      expect(hasLength(value, length)).toBeFalsy();
+      expect(hasExactLength(value, length)).toBeFalsy();
+    });
+  });
+
+  describe('hasLength', () => {
+    it.each([
+      ['a', 1, undefined, undefined],
+      ['b', undefined, 1, undefined],
+      ['c', undefined, undefined, 1],
+      ['d', 1, 1, 1],
+      ['ee', 1, 3, 2],
+    ])('should validate %p has length min=%d, max=%d, exact=%', (value, min, max, exact) => {
+      expect(hasLength(value, { min, max, exact })).toBeTruthy();
+    });
+
+    it.each([
+      ['a', 2, undefined, undefined],
+      ['bbb', undefined, 2, undefined],
+      ['c', undefined, undefined, 2],
+      ['d', 1, 1, 2],
+      ['ee', 1, 1, 2],
+    ])('should not validate %p has length min=%d, max=%d, exact=%d', (value, min, max, exact) => {
+      expect(hasLength(value, { min, max, exact })).toBeFalsy();
     });
   });
 });

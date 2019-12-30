@@ -12,10 +12,16 @@ import isCreditCard, {
 import isEmail from './lib/email';
 import isIBAN from './lib/iban';
 import isNotEmpty from './lib/notEmpty';
-import { hasLength, hasMaxLength, hasMinLength } from './lib/length';
+import hasLength, { hasExactLength, hasMaxLength, hasMinLength } from './lib/length';
+import isPassword from './lib/password';
+import isUsername from './lib/username';
 
 export default {
   CREDIT_CARD_TYPE,
+  hasExactLength,
+  hasMaxLength,
+  hasMinLength,
+  hasLength,
   isBIC,
   isCreditCard,
   isCreditCardExpirationDate,
@@ -24,7 +30,6 @@ export default {
   isEmail,
   isIBAN,
   isNotEmpty,
-  hasMaxLength,
-  hasMinLength,
-  hasLength,
+  isUsername,
+  isPassword,
 };
