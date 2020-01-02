@@ -1,15 +1,16 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 10",
     "npm": ">= 6"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./src/index.js",
   "scripts": {
     "clean": "rimraf dist/",
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist --ignore **/*.test.js",
     "prepublish": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
