@@ -1,12 +1,12 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 10",
     "npm": ">= 6"
   },
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "clean": "rimraf dist/",
     "build": "babel src --out-dir dist",
