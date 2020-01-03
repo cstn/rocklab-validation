@@ -1,16 +1,18 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 10",
     "npm": ">= 6"
   },
-  "main": "./dist/index.js",
-  "module": "./src/index.js",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "clean": "rimraf dist/",
-    "build": "babel src --out-dir dist --ignore **/*.test.js",
+    "clean": "rimraf lib/",
+    "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
     "prepublish": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
@@ -61,6 +63,7 @@
     "rimraf": "^3.0.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/polyfill": "^7.7.0"
   }
 }
