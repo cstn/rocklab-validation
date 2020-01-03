@@ -2,19 +2,19 @@
  * @fileOverview validators
  */
 
-import isBIC from './lib/bic';
+import isBIC from './bic';
 import isCreditCard, {
   TYPE as CREDIT_CARD_TYPE,
   isCreditCardNumber,
   isCVC,
   isCreditCardExpirationDate,
-} from './lib/creditCard';
-import isEmail from './lib/email';
-import isIBAN from './lib/iban';
-import isNotEmpty from './lib/notEmpty';
-import hasLength, { hasExactLength, hasMaxLength, hasMinLength } from './lib/length';
-import isPassword from './lib/password';
-import isUsername from './lib/username';
+} from './creditCard';
+import isEmail from './email';
+import isIBAN from './iban';
+import isNotEmpty from './notEmpty';
+import hasLength, { hasExactLength, hasMaxLength, hasMinLength } from './length';
+import isPassword from './password';
+import isUsername from './username';
 
 export default {
   CREDIT_CARD_TYPE,

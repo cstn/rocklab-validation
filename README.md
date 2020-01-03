@@ -25,11 +25,20 @@ npm install @rocklab/validators
 ## Usage
 
 ```javascript
-import { isEmail } from '@rocklab/validation';
+import rules from '@rocklab/validation';
+
+if (!rules.isEmail(value)) {
+  alert('Please enter a valid email address');
+}
+```
+
+```javascript
+import isEmail from '@rocklab/validation/lib/email';
 
 if (!isEmail(value)) {
   alert('Please enter a valid email address');
 }
+
 ```
 
 ## Development
