@@ -16,7 +16,7 @@ import hasLength, { hasExactLength, hasMaxLength, hasMinLength } from './length'
 import isPassword from './password';
 import isUsername from './username';
 
-export default {
+export {
   CREDIT_CARD_TYPE,
   hasExactLength,
   hasMaxLength,
