@@ -19,21 +19,13 @@ _A library for input validation_
 ## Install
 
 ```shell script
-npm install @rocklab/validators
+npm install @rocklab/validation
 ```
 
 ## Usage
 
 ```javascript
-import rules from '@rocklab/validation';
-
-if (!rules.isEmail(value)) {
-  alert('Please enter a valid email address');
-}
-```
-
-```javascript
-import isEmail from '@rocklab/validation/lib/email';
+import { isEmail } from '@rocklab/validation';
 
 if (!isEmail(value)) {
   alert('Please enter a valid email address');

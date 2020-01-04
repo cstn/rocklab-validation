@@ -1,24 +1,29 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 10",
     "npm": ">= 6"
   },
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "files": [
-    "lib"
+    "es",
+    "lib",
+    "src"
   ],
   "scripts": {
     "clean": "rimraf lib/",
-    "build": "babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "build": "npm run build:commonjs && npm run build:es",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"**/*.test.js\"",
+    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore \"**/*.test.js\"",
     "prepublish": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
     "lint": "eslint src/",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "prettier-eslint --write \"packages/**/*.{js,md}\""
+    "prettier": "prettier-eslint --write \"src/**/*.js\""
   },
   "husky": {
     "hooks": {
@@ -55,6 +60,7 @@
     "@babel/preset-env": "^7.7.7",
     "@rocklab/eslint-config-rocklab": "^1.2.0",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
