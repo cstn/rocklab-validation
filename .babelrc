@@ -21,6 +21,16 @@
         ]
       ]
     },
+    "browser": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "useBuiltIns": false
+          }
+        ]
+      ]
+    },
     "test": {
       "presets": [
         [

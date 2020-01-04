@@ -14,10 +14,12 @@
     "src"
   ],
   "scripts": {
-    "clean": "rimraf lib/",
-    "build": "npm run build:commonjs && npm run build:es",
+    "clean": "rimraf lib/ && rimraf dist/ && rimraf es/",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:browser",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"**/*.test.js\"",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore \"**/*.test.js\"",
+    "build:browser": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify --outfile dist/rocklab-validation.js",
+    "build:browser:min": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify | uglifyjs > dist/rocklab-validation.min.js",
     "prepublish": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
@@ -60,13 +62,16 @@
     "@babel/preset-env": "^7.7.7",
     "@rocklab/eslint-config-rocklab": "^1.2.0",
     "babel-eslint": "^10.0.3",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier-eslint-cli": "^5.0.0",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "uglify-js": "^3.7.3"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.7.6",
