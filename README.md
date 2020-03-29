@@ -23,14 +23,24 @@ npm install @rocklab/validation
 ```
 
 ## Usage
-
+Validate input:
 ```javascript
 import { isEmail } from '@rocklab/validation';
 
 if (!isEmail(value)) {
   alert('Please enter a valid email address');
 }
+```
 
+Apply multiple validators:
+```javascript
+import { validate } from '@rocklab/validation';
+
+const errors = validate(value, [
+  ['notEmpty', 'Input required'],
+  ['isEmail', 'email required'],
+  ['hasMinLength', 'Min 10 chars', 10]
+]);
 ```
 
 ## Development
