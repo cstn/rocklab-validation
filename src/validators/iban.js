@@ -2,7 +2,7 @@
  * @fileOverview IBAN validator
  */
 
-import isEmpty from './utils/empty';
+import isEmpty from '../utils/empty';
 
 // IBAN format patterns map by country code
 const REGEX_PATTERNS = {

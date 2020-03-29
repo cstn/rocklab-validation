@@ -3,7 +3,7 @@
  */
 
 import hasLength from './length';
-import { countNumericChars, countSpecialChars, countUpperCase, countLowerCase } from './utils/string';
+import { countNumericChars, countSpecialChars, countUpperCase, countLowerCase } from '../utils/string';
 
 const DEFAULT_OPTIONS = {
   // minimal length

@@ -2,7 +2,7 @@
  * @fileOverview validator for required values
  */
 
-import isEmpty from './utils/empty';
+import isEmpty from '../utils/empty';
 
 /**
  * check required value

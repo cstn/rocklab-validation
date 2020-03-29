@@ -2,8 +2,8 @@
  * @fileOverview validators for credit cards
  */
 
-import isEmpty from './utils/empty';
-import checkLuhn from './utils/luhn';
+import isEmpty from '../utils/empty';
+import checkLuhn from '../utils/luhn';
 
 const TYPE = {
   STANDARD: 'STANDARD',
