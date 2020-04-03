@@ -1,5 +1,7 @@
 # Rocklab validators
 
+![Node CI](https://github.com/cstn/rocklab-validation/workflows/Node%20CI/badge.svg)
+
 _A library for input validation_
 
 * Credit card (number, cvc, expiration date)
