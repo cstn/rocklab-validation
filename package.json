@@ -1,6 +1,6 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 12",
@@ -59,24 +59,25 @@
   },
   "homepage": "https://github.com/cstn/rocklab-validation#readme",
   "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7",
-    "@rocklab/eslint-config-rocklab": "^1.2.0",
-    "babel-eslint": "^10.0.3",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@rocklab/eslint-config-rocklab": "1.2.1",
+    "babel-eslint": "^10.1.0",
     "babelify": "^10.0.0",
-    "browserify": "^16.5.0",
-    "cross-env": "^6.0.3",
-    "eslint": "^6.8.0",
-    "husky": "^3.1.0",
-    "jest": "^25.2.3",
-    "lint-staged": "^9.5.0",
+    "browserify": "^16.5.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^5.16.0",
+    "husky": "^4.2.3",
+    "jest": "^25.2.7",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2",
     "prettier-eslint-cli": "^5.0.0",
-    "rimraf": "^3.0.0",
-    "uglify-js": "^3.7.3"
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.8.1"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/polyfill": "^7.7.0"
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/polyfill": "^7.8.7"
   }
 }
