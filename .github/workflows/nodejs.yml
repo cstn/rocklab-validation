@@ -23,9 +23,9 @@ jobs:
     - name: npm install, build, lint, audit, test
       run: |
         npm ci
+        npm audit --production
         npm run build --if-present
         npm run lint
-        npm audit --production
         npm test
       env:
         CI: true
