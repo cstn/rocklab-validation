@@ -14,8 +14,8 @@ describe('isBIC', () => {
     ${'DEUTDEBBXXX'} | ${'FR'}
     ${'BNPAFRPPXXX'} | ${'DE'}
   `('should not validate $bic for country $country', ({ bic, country }) => {
-  expect(isBIC(bic, country)).toBeFalsy();
-});
+    expect(isBIC(bic, country)).toBeFalsy();
+  });
 
   it.each(['DEUTDEFFXXX', 'BARCGB22XXX', 'BNPAFRPPXXX'])('should validate %s', value => {
     expect(isBIC(value)).toBeTruthy();
@@ -26,6 +26,6 @@ describe('isBIC', () => {
     ${'DEUTDEBBXXX'} | ${'DE'}
     ${'BNPAFRPPXXX'} | ${'FR'}
   `('should validate $bic for country $country', ({ bic, country }) => {
-  expect(isBIC(bic, country)).toBeTruthy();
-});
+    expect(isBIC(bic, country)).toBeTruthy();
+  });
 });
