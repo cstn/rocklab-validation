@@ -1,3 +1,4 @@
 {
+  "parser": "@babel/eslint-parser",
   "extends": "@rocklab/eslint-config-node"
 }
