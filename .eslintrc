@@ -1,4 +1,4 @@
-// Template for your project's .eslintrc.
 {
+  "parser": "@babel/eslint-parser",
   "extends": "@rocklab/eslint-config-node"
 }
