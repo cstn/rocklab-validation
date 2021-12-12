@@ -1,6 +1,6 @@
 {
   "name": "@rocklab/validation",
-  "version": "0.5.3",
+  "version": "1.0.0",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 14",
@@ -22,12 +22,12 @@
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore \"**/*.test.js\"",
     "build:browser": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify --outfile dist/rocklab-validation.js",
     "build:browser:min": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify | uglifyjs > dist/rocklab-validation.min.js",
-    "prepublish": "npm run clean && npm run build",
+    "prepublishOnly": "npm run clean && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
     "lint": "eslint src/",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "prettier-eslint --write \"src/**/*.js\""
+    "prettier": "prettier --write \"src/**/*.js\""
   },
   "husky": {
     "hooks": {
@@ -61,17 +61,17 @@
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-env": "^7.16.0",
-    "@rocklab/eslint-config-node": "^2.0.3",
+    "@babel/preset-env": "^7.16.4",
+    "@rocklab/eslint-config-javascript": "^3.0.1",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.3.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.4",
     "jest": "^27.3.1",
     "lint-staged": "^11.2.6",
-    "prettier": "^2.4.1",
-    "prettier-eslint-cli": "^5.0.1",
+    "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "uglify-js": "^3.14.2"
   },
