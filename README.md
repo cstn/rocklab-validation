@@ -15,7 +15,7 @@ _A library for input validation_
 
 ## Requirements
 
-* node version 12
+* node version 14
 * npm version 6
 
 ## Install
