@@ -88,7 +88,7 @@ describe('credit card', () => {
       'should not validate %s as expiration date',
       value => {
         expect(isCreditCardExpirationDate(value)).toBeFalsy();
-      }
+      },
     );
   });
 

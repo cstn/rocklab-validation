@@ -9,7 +9,7 @@ describe('isEmail', () => {
     'should validate %s',
     value => {
       expect(isEmail(value)).toBeTruthy();
-    }
+    },
   );
 
   it.each([undefined, null, '', 'a.test.com', 'a@b.c'])('should not validate %s', value => {

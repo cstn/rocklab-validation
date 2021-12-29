@@ -20,6 +20,7 @@ const checkLuhn = value => {
         acc.odd += digit;
       } else if (digit >= 5) {
         // sum last digit of double even
+        // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
         acc.even = acc.even + 2 * digit - 9;
       } else {
         acc.even += 2 * digit;

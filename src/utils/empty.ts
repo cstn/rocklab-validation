@@ -4,15 +4,15 @@
 
 /**
  * is value undefined, null or empty string?
- * @param value
+ * @param {string | null | undefined} value
  * @returns {boolean}
  */
-const isEmpty = value => {
+const isEmpty = (value: string | null | undefined): boolean => {
   if (typeof value === 'undefined' || value === null) {
     return true;
   }
 
-  if (typeof value === 'string' && value.length === 0) {
+  if (value.length === 0) {
     return true;
   }
 

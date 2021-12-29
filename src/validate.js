@@ -18,6 +18,7 @@ const validate = (value, checks = []) =>
       const validator = validators[name];
 
       if (!validator) {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`Unknown validator "${name}"`);
       }
 

@@ -8,7 +8,6 @@
   },
   "main": "lib/index.js",
   "module": "es/index.js",
-  "browser": "dist/rocklab-validation.min.js",
   "files": [
     "dist",
     "es",
@@ -17,12 +16,12 @@
   ],
   "scripts": {
     "clean": "rimraf lib/ && rimraf dist/ && rimraf es/",
-    "build": "npm run build:commonjs && npm run build:es && npm run build:browser",
+    "compile": "tsc",
+    "build": "npm run build:commonjs && npm run build:es",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --ignore \"**/*.test.js\"",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es --ignore \"**/*.test.js\"",
-    "build:browser": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify --outfile dist/rocklab-validation.js",
     "build:browser:min": "cross-env BABEL_ENV=browser browserify src/index.js --transform babelify | uglifyjs > dist/rocklab-validation.min.js",
-    "prepublishOnly": "npm run clean && npm run build",
+    "prepublishOnly": "npm run clean && npm run compile && npm run build",
     "test": "jest --config config/jest.config.js",
     "watch": "jest --config config/jest.config.js --watch",
     "lint": "eslint src/",
@@ -62,7 +61,10 @@
     "@babel/core": "7.16.5",
     "@babel/eslint-parser": "7.16.5",
     "@babel/preset-env": "7.16.5",
-    "@rocklab/eslint-config-javascript": "3.0.3",
+    "@babel/preset-typescript": "^7.16.5",
+    "@rocklab/eslint-config-typescript": "3.0.4",
+    "@tsconfig/node14": "^1.0.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "babelify": "10.0.0",
     "browserify": "17.0.0",
     "cross-env": "7.0.3",
@@ -73,6 +75,7 @@
     "lint-staged": "12.1.4",
     "prettier": "2.5.1",
     "rimraf": "3.0.2",
+    "typescript": "4.5.4",
     "uglify-js": "3.14.5"
   },
   "dependencies": {

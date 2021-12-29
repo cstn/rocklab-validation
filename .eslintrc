@@ -1,4 +1,20 @@
 {
-  "parser": "@babel/eslint-parser",
-  "extends": "@rocklab/eslint-config-javascript/base"
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": "@rocklab/eslint-config-typescript/base",
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-operants": "off",
+        "@typescript-eslint/no-unsafe-return": "off"
+      }
+    }
+  ]
 }
