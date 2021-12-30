@@ -12,6 +12,8 @@ enum Validator {
   MaxLength = 'MaxLength'
 }
 
-type ValidatorOptions = { [key: string]: number | string };
+type ValidatorOptions = {
+  [key: string]: number | string;
+};
 
 export { Validator, ValidatorOptions };

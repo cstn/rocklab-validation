@@ -65,3 +65,4 @@ const isPassword = (value: string, { min, max, lowercase, numeric, special, uppe
 };
 
 export default isPassword;
+export { Options };

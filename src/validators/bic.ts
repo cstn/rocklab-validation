@@ -30,3 +30,4 @@ const isBIC = (value: string, options?: Options): boolean => {
 };
 
 export default isBIC;
+export { Options };

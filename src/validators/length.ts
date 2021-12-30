@@ -14,63 +14,61 @@ type Value = object[] | string[] | number[] | string | number | null;
 /**
  * check minimal length
  * @param {string|Array} value
- * @param {number} length
+ * @param {Options} options
  * @returns {boolean}
  */
-const hasMinLength = (value: Value, { length }: Options): boolean => {
+const hasMinLength = (value: Value, options: Options): boolean => {
   if (typeof value !== 'string' && !Array.isArray(value)) {
     return false;
   }
 
-  return typeof length !== 'undefined' && value.length >= length;
+  return typeof options.length !== 'undefined' && value.length >= options.length;
 };
 
 /**
  * check maximal length
  * @param {string|Array} value
- * @param {number} length
+ * @param {Options} options
  * @returns {boolean}
  */
-const hasMaxLength = (value: Value, { length }: Options): boolean => {
+const hasMaxLength = (value: Value, options: Options): boolean => {
   if (typeof value !== 'string' && !Array.isArray(value)) {
     return false;
   }
 
-  return typeof length !== 'undefined' && value.length <= length;
+  return typeof options.length !== 'undefined' && value.length <= options.length;
 };
 
 /**
  * check length
  * @param {string|Array} value
- * @param {number} length
+ * @param {Options} options
  * @returns {boolean}
  */
-const hasExactLength = (value: Value, { length }: Options): boolean => {
+const hasExactLength = (value: Value, options: Options): boolean => {
   if (typeof value !== 'string' && !Array.isArray(value)) {
     return false;
   }
 
-  return typeof length !== 'undefined' && value.length === length;
+  return typeof options.length !== 'undefined' && value.length === options.length;
 };
 
 /**
  * check length
  * @param {String|Array} value
- * @param {number} min
- * @param {number} max
- * @param {number} exact
+ * @param {Options} options
  * @returns {boolean}
  */
-const hasLength = (value: Value, { min, max, exact }: Options): boolean => {
-  if (typeof min !== 'undefined' && !hasMinLength(value, { length: min })) {
+const hasLength = (value: Value, options: Options): boolean => {
+  if (typeof options.min !== 'undefined' && !hasMinLength(value, { length: options.min })) {
     return false;
   }
 
-  if (typeof max !== 'undefined' && !hasMaxLength(value, { length: max })) {
+  if (typeof options.max !== 'undefined' && !hasMaxLength(value, { length: options.max })) {
     return false;
   }
 
-  if (typeof exact !== 'undefined' && !hasExactLength(value, { length: exact })) {
+  if (typeof options.exact !== 'undefined' && !hasExactLength(value, { length: options.exact })) {
     return false;
   }
 
@@ -78,4 +76,4 @@ const hasLength = (value: Value, { min, max, exact }: Options): boolean => {
 };
 
 export default hasLength;
-export { hasExactLength, hasMaxLength, hasMinLength };
+export { Options, hasExactLength, hasMaxLength, hasMinLength };

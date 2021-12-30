@@ -103,15 +103,15 @@ const hasValidChecksum = (iban: string): boolean => {
 /**
  * check IBAN
  * @param {string} value         the IBAN
- * @param {string} countryCode   2 digit county code (optional, enables country specific check only)
+ * @param {Options} option   2 digit county code (optional, enables country specific check only)
  * @returns {boolean}
  */
-const isIBAN = (value: string, { countryCode }: Options): boolean => {
+const isIBAN = (value: string, options?: Options): boolean => {
   if (isEmpty(value)) {
     return false;
   }
 
-  if (!countryCode) {
+  if (!options?.countryCode) {
     // no country code specified? Look for any matching pattern
     const country = Object.keys(REGEX_PATTERNS).find((code: string) => REGEX_PATTERNS[code].test(value));
 
@@ -120,7 +120,7 @@ const isIBAN = (value: string, { countryCode }: Options): boolean => {
     }
   } else {
     // country code specified: check only the corresponding pattern
-    const regex = REGEX_PATTERNS[countryCode];
+    const regex = REGEX_PATTERNS[options.countryCode];
 
     if (!regex) {
       return false;
@@ -139,3 +139,4 @@ const isIBAN = (value: string, { countryCode }: Options): boolean => {
 };
 
 export default isIBAN;
+export { Options };

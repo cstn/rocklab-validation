@@ -2,7 +2,22 @@
  * @fileOverview validator helper
  */
 
-import * as validators from './validators';
+import {
+  isBIC,
+  isCreditCard,
+  isEmail,
+  isIBAN,
+  hasLength,
+  isNotEmpty,
+  isPassword,
+  isUsername,
+  BICOptions,
+  IBANOptions,
+  CreditCardOptions,
+  LengthOptions,
+  PasswordOptions,
+  UsernameOption
+} from './validators';
 import { Validator, ValidatorOptions } from './validators/types';
 
 const VALID = '__VALID__';
@@ -13,36 +28,37 @@ type Check = {
   options?: ValidatorOptions;
 };
 
-type Value = string | number | boolean | never[] | object;
-type ValidatorFunction = (value: Value, option?: ValidatorOptions) => boolean;
-
-const VALIDATORS: Record<string, any> = {
-  [Validator.BIC]: validators.isBIC,
-  [Validator.CreditCard]: validators.isCreditCard,
-  [Validator.Email]: validators.isEmail,
-  [Validator.IBAN]: validators.isIBAN,
-  [Validator.Length]: validators.hasLength,
-  [Validator.NotEmpty]: validators.isNotEmpty,
-  [Validator.Password]: validators.isPassword,
-  [Validator.Username]: validators.isUsername,
-};
+type Value = object[] | string[] | number[] | string | number | null;
 
 /**
  * apply multiple validators to a value
- * @param {String|Number|Boolean|Object} value
+ * @param {Value} value
  * @param {Check[]} checks  list of checks to execute
  * @returns {[]}
  */
 const validate = (value: Value, checks: Check[] = []) =>
   checks
     .map(({ validator, message, options }) => {
-      const validatorFunction = VALIDATORS[validator] as ValidatorFunction;
-
-      if (!validatorFunction) {
-        throw new Error(`Unknown validator "${validator}"`);
+      switch (validator) {
+        case Validator.BIC:
+          return isBIC(value as string, options as BICOptions) ? VALID : message;
+        case Validator.CreditCard:
+          return isCreditCard(value as string, options as CreditCardOptions) ? VALID : message;
+        case Validator.Email:
+          return isEmail(value as string) ? VALID : message;
+        case Validator.IBAN:
+          return isIBAN(value as string, options as IBANOptions) ? VALID : message;
+        case Validator.Length:
+          return hasLength(value, options as LengthOptions) ? VALID : message;
+        case Validator.NotEmpty:
+          return isNotEmpty(value) ? VALID : message;
+        case Validator.Password:
+          return isPassword(value as string, options as PasswordOptions) ? VALID : message;
+        case Validator.Username:
+          return isUsername(value as string, options as UsernameOption) ? VALID : message;
+        default:
+          throw new Error(`Unknown validator "${validator}"`);
       }
-
-      return validatorFunction(value, options) ? VALID : message;
     })
     .filter((result) => result !== VALID);
 

@@ -35,11 +35,11 @@ const REGEX_CVC: Record<CreditCardType, RegExp> = {
 /**
  * validate a credit card number
  * @param {String} value
- * @param {CreditCardType} type
+ * @param {Options} options
  * @returns {*|boolean}
  */
-const isCreditCardNumber = (value: string, { type = CreditCardType.Standard }: Options): boolean =>
-  !isEmpty(value) && REGEX_NUMBERS[type] && REGEX_NUMBERS[type].test(value) && checkLuhn(value);
+const isCreditCardNumber = (value: string, options: Options): boolean =>
+  !isEmpty(value) && REGEX_NUMBERS[options.type] && REGEX_NUMBERS[options.type].test(value) && checkLuhn(value);
 
 /**
  * check the CVC format, DOES NOT CHECK NUMBER ITSELF
@@ -87,17 +87,15 @@ const isCreditCardExpirationDate = (value: string): boolean => {
 /**
  * validate a credit card, checks only the format, no real card check against a card provider
  * @param {string} number
- * @param {string} cvc
- * @param {string} expirationDate in the format MMYY or MM/YY
- * @param {CreditCardType} type
+ * @param {Options} options
  * @returns {boolean}
  */
-const isCreditCard = (number: string, { cvc, expirationDate, type = CreditCardType.Standard }: Options) =>
-  Boolean(cvc) &&
-  Boolean(expirationDate) &&
-  isCreditCardNumber(number, { type }) &&
-  isCVC(cvc as string, { type }) &&
-  isCreditCardExpirationDate(expirationDate as string);
+const isCreditCard = (number: string, options: Options) =>
+  Boolean(options.cvc) &&
+  Boolean(options.expirationDate) &&
+  isCreditCardNumber(number, { type: options.type }) &&
+  isCVC(options.cvc as string, { type: options.type }) &&
+  isCreditCardExpirationDate(options.expirationDate as string);
 
 export default isCreditCard;
-export { CreditCardType, isCreditCardNumber, isCVC, isCreditCardExpirationDate };
+export { CreditCardType, Options, isCreditCardNumber, isCVC, isCreditCardExpirationDate };
