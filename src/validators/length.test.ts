@@ -13,7 +13,7 @@ describe('length', () => {
       [['a'], 1],
       [[2], 1],
     ])('should validate %p has min length %d', (value, length) => {
-      expect(hasMinLength(value, length)).toBeTruthy();
+      expect(hasMinLength(value, { length })).toBeTruthy();
     });
 
     it.each([
@@ -23,7 +23,7 @@ describe('length', () => {
       [['a'], 2],
       [[2], 2],
     ])('should not validate %p has min length %d', (value, length) => {
-      expect(hasMinLength(value, length)).toBeFalsy();
+      expect(hasMinLength(value, { length })).toBeFalsy();
     });
   });
 
@@ -37,7 +37,7 @@ describe('length', () => {
       [[2], 1],
       [[2], 10],
     ])('should validate %p has max length %d', (value, length) => {
-      expect(hasMaxLength(value, length)).toBeTruthy();
+      expect(hasMaxLength(value, { length })).toBeTruthy();
     });
 
     it.each([
@@ -47,7 +47,7 @@ describe('length', () => {
       [['a'], 0],
       [[1, 2], 1],
     ])('should not validate %p has max length %d', (value, length) => {
-      expect(hasMaxLength(value, length)).toBeFalsy();
+      expect(hasMaxLength(value, { length })).toBeFalsy();
     });
   });
 
@@ -58,7 +58,7 @@ describe('length', () => {
       ['aa', 2],
       [[1, 2], 2],
     ])('should validate %p has length %d', (value, length) => {
-      expect(hasExactLength(value, length)).toBeTruthy();
+      expect(hasExactLength(value, { length })).toBeTruthy();
     });
 
     it.each([
@@ -67,7 +67,7 @@ describe('length', () => {
       ['a', 2],
       [[1, 2], 1],
     ])('should not validate %p has length %d', (value, length) => {
-      expect(hasExactLength(value, length)).toBeFalsy();
+      expect(hasExactLength(value, { length })).toBeFalsy();
     });
   });
 
@@ -78,7 +78,7 @@ describe('length', () => {
       ['c', undefined, undefined, 1],
       ['d', 1, 1, 1],
       ['ee', 1, 3, 2],
-    ])('should validate %p has length min=%d, max=%d, exact=%', (value, min, max, exact) => {
+    ])('should validate %p has length min=%d, max=%d, exact=%d', (value, min, max, exact) => {
       expect(hasLength(value, { min, max, exact })).toBeTruthy();
     });
 

@@ -16,5 +16,15 @@
         "@typescript-eslint/no-unsafe-return": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "arrow-parens": [2, "always"],
+    "@typescript-eslint/comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }]
+  }
 }

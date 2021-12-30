@@ -5,28 +5,28 @@
 const REGEX_SPECIAL_CHARS = /[\s_\-+*,;.:!§$%&/\\()?]/;
 const REGEX_NUMERIC = /[0-9]/;
 
-const isUpperCase = c => Boolean(c) && c !== c.toLocaleLowerCase();
+const isUpperCase = (c: string): boolean => Boolean(c) && c !== c.toLocaleLowerCase();
 
-const isLowerCase = c => Boolean(c) && c !== c.toLocaleUpperCase();
+const isLowerCase = (c: string): boolean => Boolean(c) && c !== c.toLocaleUpperCase();
 
-const isSpecialChar = c => Boolean(c) && REGEX_SPECIAL_CHARS.test(c);
+const isSpecialChar = (c: string): boolean => Boolean(c) && REGEX_SPECIAL_CHARS.test(c);
 
-const isNumericChar = c => Boolean(c) && REGEX_NUMERIC.test(c);
+const isNumericChar = (c: string): boolean => Boolean(c) && REGEX_NUMERIC.test(c);
 
 /**
  * count upper case chars
- * @param {String} text
+ * @param {string} text
  * @returns {number}
  */
-const countUpperCase = text =>
+const countUpperCase = (text: string): number =>
   text.split('').reduce((accumulator, current) => (isUpperCase(current) ? accumulator + 1 : accumulator), 0);
 
 /**
  * count lower case chars
- * @param {String} text
+ * @param {string} text
  * @returns {number}
  */
-const countLowerCase = text =>
+const countLowerCase = (text: string): number =>
   text.split('').reduce((accumulator, current) => (isLowerCase(current) ? accumulator + 1 : accumulator), 0);
 
 /**
@@ -34,7 +34,7 @@ const countLowerCase = text =>
  * @param {String} text
  * @returns {number}
  */
-const countNumericChars = text =>
+const countNumericChars = (text: string): number =>
   text.split('').reduce((accumulator, current) => (isNumericChar(current) ? accumulator + 1 : accumulator), 0);
 
 /**
@@ -42,7 +42,7 @@ const countNumericChars = text =>
  * @param {String} text
  * @returns {number}
  */
-const countSpecialChars = text =>
+const countSpecialChars = (text: string): number =>
   text.split('').reduce((accumulator, current) => (isSpecialChar(current) ? accumulator + 1 : accumulator), 0);
 
 export { countLowerCase, countNumericChars, countSpecialChars, countUpperCase };
