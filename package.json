@@ -1,20 +1,20 @@
 {
   "name": "@rocklab/validation",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 14",
     "npm": ">= 6"
   },
-  "main": "lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "lib",
+    "dist",
     "src"
   ],
   "scripts": {
-    "clean": "rimraf lib/",
-    "compile": "tsc --declaration",
+    "clean": "rimraf dist/",
+    "compile": "tsc",
     "build": "npm run clean && npm run compile",
     "prepublishOnly": "npm run build",
     "test": "jest --config config/jest.config.js",
@@ -61,9 +61,6 @@
     "@tsconfig/node14": "1.0.1",
     "@types/jest": "27.4.0",
     "@typescript-eslint/parser": "5.8.1",
-    "babelify": "10.0.0",
-    "browserify": "17.0.0",
-    "cross-env": "7.0.3",
     "eslint": "8.5.0",
     "eslint-config-prettier": "8.3.0",
     "husky": "7.0.4",

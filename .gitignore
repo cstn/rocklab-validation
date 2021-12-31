@@ -1,8 +1,5 @@
 node_modules/
 dist/
-es/
-lib/
-out/
 
 *.log
 
