@@ -4,8 +4,12 @@
 
 import isEmpty from '../utils/empty';
 
+type Options = {
+  countryCode?: string;
+};
+
 // IBAN format patterns map by country code
-const REGEX_PATTERNS = {
+const REGEX_PATTERNS: Record<string, RegExp> = {
   AL: /^AL\d{10}[0-9A-Z]{16}$/,
   AD: /^AD\d{10}[0-9A-Z]{12}$/,
   AT: /^AT\d{18}$/,
@@ -66,10 +70,10 @@ const REGEX_PATTERNS = {
 
 /**
  * check IBAN checksum
- * @param {String} iban   the IBAN
+ * @param {string} iban   the IBAN
  * @returns {boolean}
  */
-const hasValidChecksum = iban => {
+const hasValidChecksum = (iban: string): boolean => {
   const countryCode = iban.substring(0, 2);
   const checksum = iban.substring(2, 4);
   const ban = iban.substring(4) + countryCode + checksum; // move country code and checksum to end
@@ -77,7 +81,7 @@ const hasValidChecksum = iban => {
   // convert alphanumeric chars to digits
   const digits = ban
     .split('')
-    .map(c => {
+    .map((c: string) => {
       if (c >= '0' && c <= '9') {
         return c;
       }
@@ -98,25 +102,25 @@ const hasValidChecksum = iban => {
 
 /**
  * check IBAN
- * @param {String} value         the IBAN
- * @param {String} countryCode   2 digit county code (optional, enables country specific check only)
+ * @param {string} value         the IBAN
+ * @param {Options} option   2 digit county code (optional, enables country specific check only)
  * @returns {boolean}
  */
-const isIBAN = (value, countryCode) => {
+const isIBAN = (value: string, options?: Options): boolean => {
   if (isEmpty(value)) {
     return false;
   }
 
-  if (!countryCode) {
+  if (!options?.countryCode) {
     // no country code specified? Look for any matching pattern
-    const country = Object.keys(REGEX_PATTERNS).find(code => REGEX_PATTERNS[code].test(value));
+    const country = Object.keys(REGEX_PATTERNS).find((code: string) => REGEX_PATTERNS[code].test(value));
 
     if (!country) {
       return false;
     }
   } else {
     // country code specified: check only the corresponding pattern
-    const regex = REGEX_PATTERNS[countryCode];
+    const regex = REGEX_PATTERNS[options.countryCode];
 
     if (!regex) {
       return false;
@@ -135,3 +139,4 @@ const isIBAN = (value, countryCode) => {
 };
 
 export default isIBAN;
+export { Options };

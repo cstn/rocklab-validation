@@ -33,7 +33,7 @@ describe('isIBAN', () => {
     ['CZ4201000000195505030267', 'CZ'],
     ['HU29117080012054779400000000', 'HU'],
   ])('should validate IBAN %s for country %s', (iban, countryCode) => {
-    expect(isIBAN(iban, countryCode)).toBeTruthy();
+    expect(isIBAN(iban, { countryCode })).toBeTruthy();
   });
 
   it.each([
@@ -41,6 +41,6 @@ describe('isIBAN', () => {
     ['DE1250010517064848989', 'DE'],
     ['LU761111000872960001', 'LU'],
   ])('should not validate IBAN %s for country %s', (iban, countryCode) => {
-    expect(isIBAN(iban, countryCode)).toBeFalsy();
+    expect(isIBAN(iban, { countryCode })).toBeFalsy();
   });
 });

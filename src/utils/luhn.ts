@@ -2,7 +2,12 @@
  * @fileOverview luhn checksum
  */
 
-const checkLuhn = value => {
+/**
+ * check luhn
+ * @param {string} value
+ * @returns {boolean}
+ */
+const checkLuhn = (value: string): boolean => {
   const checksum = {
     odd: 0,
     even: 0,
