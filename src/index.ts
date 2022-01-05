@@ -2,9 +2,9 @@
  * @fileOverview validation
  */
 
-export { Validator } from './validators/types';
-export { default as validate, Check } from './validate';
-export {
+import { Validator } from './validators/types';
+import validate, { Check } from './validate';
+import {
   isBIC,
   isCreditCard,
   isCreditCardExpirationDate,
@@ -20,3 +20,23 @@ export {
   hasMaxLength,
   hasMinLength
 } from './validators';
+
+export {
+  Validator,
+  Check,
+  validate,
+  isBIC,
+  isCreditCard,
+  isCreditCardExpirationDate,
+  isCreditCardNumber,
+  isCVC,
+  isEmail,
+  isIBAN,
+  isNotEmpty,
+  isPassword,
+  isUsername,
+  hasLength,
+  hasExactLength,
+  hasMaxLength,
+  hasMinLength
+};
