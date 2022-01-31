@@ -1,6 +1,6 @@
 {
   "name": "@rocklab/validation",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 14",
@@ -60,7 +60,7 @@
     "@babel/preset-env": "7.16.11",
     "@babel/preset-typescript": "7.16.7",
     "@commitlint/cli": "16.0.2",
-    "@rocklab/commitlint-config": "3.2.3",
+    "@rocklab/commitlint-config": "3.2.4",
     "@rocklab/eslint-config-typescript": "3.2.1",
     "@tsconfig/node14": "1.0.1",
     "@types/jest": "27.4.0",
