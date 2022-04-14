@@ -23,7 +23,9 @@
     "lint": "eslint src/",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write \"src/**/*.js\"",
-    "release": "standard-version"
+    "version": "standard-version",
+    "release": "standard-version",
+    "prerelease": "npm run release -- --prerelease"
   },
   "husky": {
     "hooks": {
