@@ -1,6 +1,6 @@
 {
   "name": "@rocklab/validation",
-  "version": "2.0.52",
+  "version": "2.0.53",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 16",
@@ -66,10 +66,10 @@
     "@rocklab/eslint-config-typescript": "3.2.29",
     "@tsconfig/node14": "1.0.3",
     "@types/jest": "29.2.2",
-    "@typescript-eslint/parser": "5.42.0",
+    "@typescript-eslint/parser": "5.42.1",
     "eslint": "8.27.0",
     "eslint-config-prettier": "8.5.0",
-    "husky": "8.0.1",
+    "husky": "8.0.2",
     "is-ci": "3.0.1",
     "jest": "29.3.1",
     "lint-staged": "13.0.3",
