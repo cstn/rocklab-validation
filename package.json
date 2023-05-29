@@ -1,6 +1,6 @@
 {
   "name": "@rocklab/validation",
-  "version": "2.0.62",
+  "version": "2.0.63",
   "description": "A library for input validation",
   "engines": {
     "node": ">= 18",
@@ -57,9 +57,9 @@
   "homepage": "https://github.com/cstn/rocklab-validation#readme",
   "devDependencies": {
     "@babel/cli": "7.21.5",
-    "@babel/core": "7.21.8",
+    "@babel/core": "7.22.1",
     "@babel/eslint-parser": "7.21.8",
-    "@babel/preset-env": "7.21.5",
+    "@babel/preset-env": "7.22.2",
     "@babel/preset-typescript": "7.21.5",
     "@commitlint/cli": "17.6.3",
     "@rocklab/commitlint-config": "3.2.30",
@@ -67,7 +67,7 @@
     "@tsconfig/node14": "1.0.3",
     "@types/jest": "29.5.1",
     "@types/node": "^18.15.11",
-    "@typescript-eslint/parser": "5.59.6",
+    "@typescript-eslint/parser": "5.59.7",
     "eslint": "8.41.0",
     "eslint-config-prettier": "8.8.0",
     "husky": "8.0.3",
@@ -81,7 +81,7 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "7.21.4",
+    "@babel/plugin-transform-runtime": "7.22.2",
     "@babel/polyfill": "^7.8.7"
   }
 }
