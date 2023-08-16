@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.78](https://github.com/cstn/rocklab-validation/compare/v2.0.71...v2.0.78) (2023-08-16)
+
 ### [2.0.71](https://github.com/cstn/rocklab-validation/compare/v2.0.41...v2.0.71) (2023-07-20)
 
 
