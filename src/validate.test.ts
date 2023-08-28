@@ -33,4 +33,18 @@ describe('validate', () => {
 
     expect(result).toEqual(['3-6 chars']);
   });
+
+  it('should invalidate with message descriptor', () => {
+    const value = 'test';
+    const messageDescriptor = {
+      id: 'test.key',
+      defaultMessage: 'This is a test for 2-3 chars',
+    };
+
+    const result = validate(value, [
+      { validator: Validator.Length, message: messageDescriptor, options: { min: 2, max: 3 } },
+    ]);
+
+    expect(result).toEqual([messageDescriptor]);
+  });
 });
